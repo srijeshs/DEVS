@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#######################
+# RUNME FOR DEVS-FIFO #
+#######################
+
+echo -n "Should the output of the script be test against correct-output.txt? INPUT 1 IF YES, FOLLOWED BY [ENTER]: "
+read TEST_FLAG
+
+CURR_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+# If TEST_FLAG = 1
+if [ $TEST_FLAG -eq 1 ]; then
+	
+	# RUN FIFO.py and redirect output to output.txt
+	python3 $CURR_DIR/FIFO.py > output.txt
+
+	echo "TESTING OUTPUT WITH correct-output.txt"
+	
+	# COMPARE output.txt WITH correct-output.txt AND DISPLAY TEST RESULTS
+	if [[ $(cmp -s "./output.txt" "./correct-output") != 0 ]]; then	    
+	    printf 'TEST FAILED. The file "%s" is different from "%s"\n' "./output.txt" "correct-output.txt"
+	else
+	    printf 'TEST PASSED. The file "%s" is the same as "%s"\n' "./output.txt" "correct-output.txt"
+	fi
+
+# ELSE IF TEST_FLAG != 1
+else	
+	# ELSE REDIRECT OUTPUT TO CONSOLE AND EXIT
+	python3 $CURR_DIR/FIFO.py
+fi
