@@ -1,5 +1,11 @@
-# DEVS
-Discrete Event Scheduling Simulation
+      _____  ________      _______   
+     |  __ \|  ____\ \    / / ____|  
+     | |  | | |__   \ \  / / (___    
+     | |  | |  __|   \ \/ / \___ \   
+     | |__| | |____   \  /  ____) |  
+     |_____/|______|   \/  |_____/                                      
+                               
+A Discrete Event Scheduling Simulation using Python
 
 ## FORMAT OF FILES:
  
