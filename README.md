@@ -61,6 +61,7 @@ For example, using the setupt.txt example shown above, arrivals.txt can look lik
 ### III- correct-output.txt   
 
 correct-output.txt contains the simulation trace for the system defined in setup.txt and arrivals.txt.  
+
 As the simulator is implemented as a discrete events system, we are only interested in the moment when the task being executed changes.  
 
 Therefore, correct-output.txt will consist of multiple lines where every line indicates a change in the task being executed by the system.   
@@ -76,7 +77,8 @@ Every line in correct-output.txt has the format:
 
 	<task-id> is the id of task that will start execution.
 
-	<task-instance> is a non zero positive integer representing each subsequent instance for the task "task-id". The value of "task-instance" should start by 1, and be incremented by 1 for every task.  
+	<task-instance> is a non zero positive integer representing each subsequent instance for the task "task-id".  
+	The value of "task-instance" should start with 1, and be incremented by 1 for every task.  
 
 Two special values of "task-id" are reserved for the context switching overhead and the idle execution. These values are: "0" for the context switching overhead and "-1" for idle execution.
 
