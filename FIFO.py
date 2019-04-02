@@ -130,7 +130,7 @@ def event_sim(env):
         instancecount[i]= '.'+str(instancecount[i])
         tasklist[i]=str(tasklist[i])+instancecount[i]
     
-    ## iArrivalip up the outputs and print results to stdout
+    ## Zip up the outputs and print results to stdout
     zipped=zip(timelist,tasklist)
     printresult=list(zipped)
     for m in range(0,len(printresult)):
